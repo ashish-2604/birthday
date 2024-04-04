@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css?family=Nobile:400italic,700italic");
+
+html,
+body {
+  overflow: hidden;
+  background-image: url(background.jpg);
+
+  width: 100%;
+  height: 100%;
+}
+
+.card {
+  position: relative;
+  width: 300px;
+  height: 425px;
+  border: 10px solid #000;
+  margin: 150px auto 0 auto;
+  box-shadow: inset 10px 0px 15px 0px rgba(0, 0, 0, 0.1);
+  background-color: #34b5cf;
+}
+
+.card .container {
+  width: 80%;
+  height: 80%;
+  margin: auto;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+}
+
+.card .container #head {
+  font-family: 'Nobile', sans-serif;
+  font-size: 0.9rem;
+  margin: 40px auto;
+  color: #8bb8cf;
+  font-weight: 700;
+}
+
+.card p {
+  font-size: 1.25rem;
+  line-height: 1.2;
+  font-family: sans-serif;
+  color: #060808;
+  font-style: normal;
+  text-align: center;
+  margin: 30px auto 0px auto;
+}
+
+.card .front {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: -10px 0px 0px -10px;
+  border: 10px solid #000;
+  backface-visibility: hidden;
+  background-color: #ecf0f1;
+  transform-style: preserve-3d;
+  transform-origin: 0% 50%;
+  transform: perspective(800px) rotateY(0deg);
+  transition: all .8s ease-in-out;
+}
+
+.card:hover .front {
+  transform: perspective(800px) rotateY(-170deg);
+  background-color: #ecf0f1;
+}
+
+.card .front img,
+.card .back img {
+  width: 300px;
+}
+
+.card .back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: -10px 0px 0px -10px;
+  border: 10px solid #000;
+  backface-visibility: visible;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+  transform-style: preserve-3d;
+  transform-origin: 0% 50%;
+  transition: all 0.8s ease-in-out;
+  background-color: #ecf0f1;
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover .back {
+  transform: perspective(800px) rotateY(-170deg);
+  box-shadow: 7px 0px 5px 0px rgba(0, 0, 0, 0.3),
+    inset 2px 0px 15px 0px rgba(0, 0, 0, 0.1);
+  background-color: #ecf0f1;
+}
